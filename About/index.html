@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Polar Bear</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    
+    </head>
+<body>
+
+    <!-- Mobile-specific logo, initially hidden -->
+    <img id="mobile-logo" class="mobile-logo-hide" src="img/logo-mark.svg" alt="Polar Bear Interactive Logo Mark">
+
+    <nav id="side-nav">
+        <div class="nav-header">
+            <div class="logo"><img id="site-logo" src="img/logo.png"></div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">
+                <span class="char" style="--i: 0;">H</span><span class="char" style="--i: 1;">o</span><span class="char" style="--i: 2;">m</span><span class="char" style="--i: 3;">e</span>
+            </a></li>
+            <li><a href="#">
+                <span class="char" style="--i: 0;">A</span><span class="char" style="--i: 1;">b</span><span class="char" style="--i: 2;">o</span><span class="char" style="--i: 3;">u</span><span class="char" style="--i: 4;">t</span><span class="char" style="--i: 5;">&nbsp;</span><span class="char" style="--i: 6;">U</span><span class="char" style="--i: 7;">s</span>
+            </a></li>
+            <li><a href="#">
+                <span class="char" style="--i: 0;">C</span><span class="char" style="--i: 1;">o</span><span class="char" style="--i: 2;">n</span><span class="char" style="--i: 3;">t</span><span class="char" style="--i: 4;">a</span><span class="char" style="--i: 5;">c</span><span class="char" style="--i: 6;">t</span><span class="char" style="--i: 7;">&nbsp;</span><span class="char" style="--i: 8;">U</span><span class="char" style="--i: 9;">s</span>
+            </a></li>
+        </ul>
+
+        <div class="nav-footer-controls">
+            <button id="mode-toggle" aria-label="Toggle Light/Dark Mode">
+                <svg class="light-mode-icon" width="40" height="24" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="36" height="20" rx="10" fill="#b0c4c6"/><circle cx="12" cy="12" r="8" fill="white"/></svg>
+                <svg class="dark-mode-icon" width="40" height="24" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="38" height="22" rx="11" fill="#354747;" stroke="white" stroke-width="2"/><circle cx="28" cy="12" r="8" fill="white"/></svg>
+            </button>
+            <div class="scroll-progress-container">
+                <svg class="progress-ring" width="75" height="75"><circle class="progress-ring__track" fill="transparent" r="33.75" cx="37.5" cy="37.5"/><circle class="progress-ring__indicator" fill="transparent" r="33.75" cx="37.5" cy="37.5"/><text class="progress-ring__percentage" x="37.5" y="39.4" text-anchor="middle">0%</text></svg>
+            </div>
+        </div>
+    </nav>
+
+    <!-- The perspective-wrapper is now on top to capture scroll events -->
+    <div class="perspective-wrapper">
+        <!-- This invisible element creates the scrollable height for the wrapper -->
+        <div class="scroll-height-extender"></div>
+    </div>
+
+    <!-- Sections are fixed to the viewport and will animate based on wrapper's scroll -->
+    <!-- Section 1: About Us Title -->
+    <section id="section1">
+        <h1>About Us</h1>
+    </section>
+
+    <!-- Section 2: Paragraph 1 -->
+    <section id="section2">
+        <p>Welcome to <strong>Polar Bear Interactive</strong>! We're a dynamic duo specializing in custom styles and creative interactions.</p>
+    </section>
+
+    <!-- Section 3: Paragraph 2 -->
+    <section id="section3">
+        <p>Our expertise includes interactive websites and comprehensive CIS guides. We translate your vision into captivating digital narratives.</p>
+    </section>
+
+    <!-- Section 4: Paragraph 3 -->
+    <section id="section4">
+        <p>We also host the "<strong>Antisocial Beings</strong>" podcast, featuring "Polar Bear" and "David." This venture fuels our creative synergy.</p>
+    </section>
+
+    <!-- Section 5: Image Slide -->
+    <section id="section5" class="image-slide">
+        <img src="img/cover.png" alt="Polar Bear Interactive Team Image">
+    </section>
+    
+    <div class="fixed-search-bar">
+            <div class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+            <div class="search-input-wrapper"><input type="text" class="search-input" placeholder="Search..."></div>
+        </div>
+
+        <div class="social-connect-container">
+        <div class="connect-icon">
+            <img src="img/share.png" alt="Connect" width="30" height="30">
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/karen.chang.37529" target="_blank" rel="noopener noreferrer" class="social-icon facebook">
+                <img src="img/facebook.png" alt="Facebook" width="30" height="30">
+            </a>
+            <a href="https://www.instagram.com/karen12317/" target="_blank" rel="noopener noreferrer" class="social-icon instagram">
+                <img src="img/instagram.png" alt="Instagram" width="30" height="30">
+            </a>
+            <a href="https://www.linkedin.com/in/karen-chang-419833149/" target="_blank" rel="noopener noreferrer" class="social-icon linkedin">
+                <img src="img/linkedIn.png" alt="LinkedIn" width="30" height="30">
+            </a>
+        </div>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
