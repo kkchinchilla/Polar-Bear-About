@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polar Bear Interactive</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="Home/css/main.css">
+
+    <link rel="stylesheet" href="Home/css/sections/section1.css">
+    <link rel="stylesheet" href="Home/css/sections/section2.css">
+    <link rel="stylesheet" href="Home/css/sections/section3.css">
+    <link rel="stylesheet" href="Home/css/sections/section4.css">
+</head>
+
+<body>
+
+    <!-- Mobile-specific logo, initially hidden -->
+    <img id="mobile-logo" class="mobile-logo-hide" src="img/logo-mark.svg" alt="Polar Bear Interactive Logo Mark">
+
+    <nav id="side-nav">
+        <div class="nav-header">
+            <div class="logo"><img id="site-logo" src="img/logo.png"></div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="https://kkchinchilla.github.io/Polar-Bear-Interactive/Home">
+                    <span class="char" style="--i: 0;">H</span><span class="char" style="--i: 1;">o</span><span
+                        class="char" style="--i: 2;">m</span><span class="char" style="--i: 3;">e</span>
+                </a></li>
+            <li><a href="https://kkchinchilla.github.io/Polar-Bear-Interactive/About">
+                    <span class="char" style="--i: 0;">A</span><span class="char" style="--i: 1;">b</span><span
+                        class="char" style="--i: 2;">o</span><span class="char" style="--i: 3;">u</span><span
+                        class="char" style="--i: 4;">t</span><span class="char" style="--i: 5;">&nbsp;</span><span
+                        class="char" style="--i: 6;">U</span><span class="char" style="--i: 7;">s</span>
+                </a></li>
+            <li><a href="https://kkchinchilla.github.io/Polar-Bear-Interactive/Contact">
+                    <span class="char" style="--i: 0;">C</span><span class="char" style="--i: 1;">o</span><span
+                        class="char" style="--i: 2;">n</span><span class="char" style="--i: 3;">t</span><span
+                        class="char" style="--i: 4;">a</span><span class="char" style="--i: 5;">c</span><span
+                        class="char" style="--i: 6;">t</span><span class="char" style="--i: 7;">&nbsp;</span><span
+                        class="char" style="--i: 8;">U</span><span class="char" style="--i: 9;">s</span>
+                </a></li>
+        </ul>
+
+        <div class="nav-footer-controls">
+            <button id="mode-toggle" aria-label="Toggle Light/Dark Mode">
+                <svg class="light-mode-icon" width="40" height="24" viewBox="0 0 40 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="36" height="20" rx="10" fill="#b0c4c6" />
+                    <circle cx="12" cy="12" r="8" fill="white" />
+                </svg>
+                <svg class="dark-mode-icon" width="40" height="24" viewBox="0 0 40 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="38" height="22" rx="11" fill="#354747;" stroke="white" stroke-width="2" />
+                    <circle cx="28" cy="12" r="8" fill="white" />
+                </svg>
+            </button>
+            <div class="scroll-progress-container">
+                <svg class="progress-ring" width="75" height="75">
+                    <circle class="progress-ring__track" fill="transparent" r="33.75" cx="37.5" cy="37.5" />
+                    <circle class="progress-ring__indicator" fill="transparent" r="33.75" cx="37.5" cy="37.5" /><text
+                        class="progress-ring__percentage" x="37.5" y="39.4" text-anchor="middle">0%</text>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-container">
+        <section id="section1" class="content-section" data-section="1">
+            <div class="title-container">
+                <p class="subtitle">What is</p>
+                <h1 class="main-title slot-machine-title">
+                    <span class="letter" style="--delay: 0;" data-letter="I"><span
+                            class="letter-inner">I</span></span><span class="letter" style="--delay: 1;"
+                        data-letter="N"><span class="letter-inner">N</span></span><span class="letter"
+                        style="--delay: 2;" data-letter="T"><span class="letter-inner">T</span></span><span
+                        class="letter" style="--delay: 3;" data-letter="E"><span
+                            class="letter-inner">E</span></span><span class="letter" style="--delay: 4;"
+                        data-letter="R"><span class="letter-inner">R</span></span><span class="letter"
+                        style="--delay: 5;" data-letter="A"><span class="letter-inner">A</span></span><span
+                        class="letter" style="--delay: 6;" data-letter="C"><span
+                            class="letter-inner">C</span></span><span class="letter" style="--delay: 7;"
+                        data-letter="T"><span class="letter-inner">T</span></span><span class="letter"
+                        style="--delay: 8;" data-letter="I"><span class="letter-inner">I</span></span><span
+                        class="letter" style="--delay: 9;" data-letter="V"><span
+                            class="letter-inner">V</span></span><span class="letter" style="--delay: 10;"
+                        data-letter="E"><span class="letter-inner">E</span></span>
+                    <span class="line-break"></span>
+                    <span class="letter" style="--delay: 11;" data-letter="W"><span
+                            class="letter-inner">W</span></span><span class="letter" style="--delay: 12;"
+                        data-letter="E"><span class="letter-inner">E</span></span><span class="letter"
+                        style="--delay: 13;" data-letter="B"><span class="letter-inner">B</span></span>
+                    <span class="letter-space"></span>
+                    <span class="letter" style="--delay: 14;" data-letter="D"><span
+                            class="letter-inner">D</span></span><span class="letter" style="--delay: 15;"
+                        data-letter="E"><span class="letter-inner">E</span></span><span class="letter"
+                        style="--delay: 16;" data-letter="S"><span class="letter-inner">S</span></span><span
+                        class="letter" style="--delay: 17;" data-letter="I"><span
+                            class="letter-inner">I</span></span><span class="letter" style="--delay: 18;"
+                        data-letter="G"><span class="letter-inner">G</span></span><span class="letter"
+                        style="--delay: 19;" data-letter="N"><span class="letter-inner">N</span></span>
+                </h1>
+            </div>
+            <div class="scroll-draw-container">
+            </div>
+        </section>
+
+        <section id="section3" class="content-section" data-section="3">
+            <div class="content-wrapper">
+                <h1 class="section-title">
+                    <div class="mask-container-line">
+                        <span class="title-top-line">
+                            <span class="title-line">MICRO</span>
+                            <img src="img/lightbulb.gif" alt="Lightbulb GIF" class="inline-gif lightbulb-gif">
+                        </span>
+                    </div>
+                    <div class="mask-container-line">
+                        <span class="title-bottom-line">
+                            <img src="img/clock.gif" alt="Clock GIF" class="inline-gif clock-gif">
+                            <span class="title-line">INTERACTIONS</span>
+                        </span>
+                    </div>
+                </h1>
+                <p class="section-paragraph">
+                    Micro-interactions are small, animated responses to user actions, like a button clicking back or a
+                    switch sliding. These vital details provide instant feedback, guide users, and add a layer of polish
+                    to the experience, making any interface feel more alive and responsive.<br><br>
+                    <img src="img/micro.gif" alt="Micro-interactions GIF" class="section3-bottom-gif">
+                </p>
+
+            </div>
+        </section>
+        <section id="section4" class="content-section" data-section="4">
+            <div class="video-background-wrapper">
+                <video autoplay loop muted playsinline class="background-video">
+                    <source src="https://res.cloudinary.com/dm2dqwjtz/video/upload/q_auto:good/polar_vze0wv.mp4"
+                        type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="mask-container">
+                <div class="content-wrapper">
+                    <h1 class="section-title">IMMERSIVE VISUALS</h1>
+                    <p class="section-paragraph">Video backgrounds and interactive 3D models also contribute to a more
+                        captivating visual journey.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="section2" class="content-section" data-section="2">
+            <div class="mask-container">
+                <div class="content-wrapper">
+                    <h1 class="section-title">ENGAGEMENT FEATURES</h1>
+                    <p class="section-paragraph">Elements that explicitly solicit user input, such as polls, quizzes,
+                        surveys, comment sections, and social media integrations.</p>
+                </div>
+            </div>
+
+            <div class="marquee-container">
+                <div class="marquee-row" id="marquee-row-1">
+                    <img src="img/graph-1.svg" alt="Graph 1"><img src="img/graph-4.svg" alt="Graph 4"><img
+                        src="img/graph-10.svg" alt="Graph 10"><img src="img/graph-3.svg" alt="Graph 3"><img
+                        src="img/graph-6.svg" alt="Graph 6">
+                    <img src="img/graph-1.svg" alt="" aria-hidden="true"><img src="img/graph-4.svg" alt=""
+                        aria-hidden="true"><img src="img/graph-10.svg" alt="" aria-hidden="true"><img
+                        src="img/graph-3.svg" alt="" aria-hidden="true"><img src="img/graph-6.svg" alt=""
+                        aria-hidden="true">
+                    <img src="img/graph-1.svg" alt="" aria-hidden="true"><img src="img/graph-4.svg" alt=""
+                        aria-hidden="true"><img src="img/graph-10.svg" alt="" aria-hidden="true"><img
+                        src="img/graph-3.svg" alt="" aria-hidden="true"><img src="img/graph-6.svg" alt=""
+                        aria-hidden="true">
+                </div>
+                <div class="marquee-row" id="marquee-row-2">
+                    <img src="img/graph-9.svg" alt="Graph 9"><img src="img/graph-5.svg" alt="Graph 5"><img
+                        src="img/graph-7.svg" alt="Graph 7"><img src="img/graph-8.svg" alt="Graph 8"><img
+                        src="img/graph-2.svg" alt="Graph 2">
+                    <img src="img/graph-9.svg" alt="" aria-hidden="true"><img src="img/graph-5.svg" alt=""
+                        aria-hidden="true"><img src="img/graph-7.svg" alt="" aria-hidden="true"><img
+                        src="img/graph-8.svg" alt="" aria-hidden="true"><img src="img/graph-2.svg" alt=""
+                        aria-hidden="true">
+                    <img src="img/graph-9.svg" alt="" aria-hidden="true"><img src="img/graph-5.svg" alt=""
+                        aria-hidden="true"><img src="img/graph-7.svg" alt="" aria-hidden="true"><img
+                        src="img/graph-8.svg" alt="" aria-hidden="true"><img src="img/graph-2.svg" alt=""
+                        aria-hidden="true">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="fixed-search-bar">
+        <div class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg></div>
+        <div class="search-input-wrapper"><input type="text" class="search-input" placeholder="Search..."></div>
+    </div>
+
+    <div class="social-connect-container">
+        <div class="connect-icon">
+            <img src="img/share.png" alt="Connect" width="30" height="30">
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/karen.chang.37529" target="_blank" rel="noopener noreferrer"
+                class="social-icon facebook">
+                <img src="img/facebook.png" alt="Facebook" width="30" height="30">
+            </a>
+            <a href="https://www.instagram.com/karen12317/" target="_blank" rel="noopener noreferrer"
+                class="social-icon instagram">
+                <img src="img/instagram.png" alt="Instagram" width="30" height="30">
+            </a>
+            <a href="https://www.linkedin.com/in/karen-chang-419833149/" target="_blank" rel="noopener noreferrer"
+                class="social-icon linkedin">
+                <img src="img/linkedIn.png" alt="LinkedIn" width="30" height="30">
+            </a>
+        </div>
+    </div>
+
+    <script src="js/sections/section1.js"></script>
+    <script src="js/sections/section2.js"></script>
+    <script src="js/sections/section3.js"></script>
+    <script src="js/sections/section4.js"></script>
+    <script src="js/sections/section5.js"></script>
+    <script src="js/sections/section6.js"></script>
+    <script src="js/sections/section7.js"></script>
+    <script src="js/sections/section8.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
