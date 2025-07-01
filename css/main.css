@@ -1,0 +1,595 @@
+/* ==========================================================================
+   Global Styles
+   ========================================================================== */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #dfedf1;
+    color: #354747;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Main Layout
+   ========================================================================== */
+.logo img{
+    width: 190px;
+    height: auto;
+}
+
+/* Mobile Logo - Initially Hidden */
+    .mobile-logo-hide {
+        display: none; /* Hidden by default */
+    }
+
+    .mobile-logo {
+        width: 4rem;
+        height: 4rem;
+        position: absolute; /* Position it absolutely within the body or a container */
+        top: 3rem; /* Adjust as needed for spacing from the top */
+        left: 3rem; /* Adjust as needed for spacing from the left */
+        z-index: 1001; /* Ensure it's above other content */
+    }
+
+   #mobile-logo {
+        width: 4rem;
+        height: 4rem;
+        position: absolute; /* Position it absolutely within the body or a container */
+         /* Adjust as needed for spacing from the top */
+        top: 1.8rem;
+        left: 1.8rem; /* Adjust as needed for spacing from the left */
+    }
+
+#side-nav {
+    width: 25vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0; /* Default position for desktop */
+    background-color: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 999; /* Ensure it's above main content but below mobile logo */
+}
+
+#main-container {
+    margin-left: 25vw; /* Pushed by side-nav on desktop */
+    width: 75vw;
+    transition: margin-left 0.3s ease; /* Smooth transition if main-container moves */
+}
+
+.content-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Navigation Panel (#side-nav)
+   ========================================================================== */
+
+/* --- Header --- */
+#side-nav .nav-header .logo {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+#side-nav .nav-header .nav-title {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2rem;
+    color: #000;
+    line-height: 1.2;
+    margin: 20px 0 0 0;
+    font-weight: 600;
+    letter-spacing: -2px;
+    transition: color 0.3s ease;
+}
+
+/* --- Links --- */
+#side-nav .nav-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 80px;
+}
+
+#side-nav .nav-links li {
+    margin-bottom: 45px;
+}
+
+#side-nav .nav-links a {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 0.9rem;
+    color: #354747;
+    font-weight: 400;
+    text-decoration: none;
+    position: relative;
+    padding-left: 40px;
+    letter-spacing: -2px;
+    transition: color 0.3s ease;
+}
+
+#side-nav .nav-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 1px;
+    background-color: #555;
+    transition: all 0.3s ease;
+}
+
+#side-nav .nav-links a:hover::before {
+    width: 25px;
+    background-color: #000;
+}
+
+/* --- Link Hover Animation --- */
+@keyframes stretch-and-shrink {
+    0%   { transform: scaleY(1); }
+    30%  { transform: scaleY(1.4); }
+    70%  { transform: scaleY(1.4); }
+    100% { transform: scaleY(1); }
+}
+
+#side-nav .nav-links a .char {
+    display: inline-block;
+    transform-origin: bottom center;
+}
+
+#side-nav .nav-links span {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0;
+}
+
+#side-nav .nav-links a:hover .char {
+    animation: stretch-and-shrink 0.3s cubic-bezier(0.3, 0, 0.3, 1);
+    animation-delay: calc(var(--i) * 30ms);
+}
+
+/* --- Footer Controls --- */
+.nav-footer-controls {
+    margin-top: auto; /* Pushes the controls to the bottom */
+    position: relative;
+    bottom: 10px; /* Aligns with the 50px bottom padding of the nav panel */
+    left: 0;
+    right: 0;
+    padding: 0; /* Padding is handled by the parent */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==========================================================================
+   Mode Switch
+   ========================================================================== */
+#mode-toggle {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px; 
+    height: 34px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#mode-toggle:hover {
+    transform: scale(1.05);
+}
+
+#mode-toggle svg {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mode-toggle .light-mode-icon { opacity: 1; transform: translateX(0); }
+#mode-toggle .dark-mode-icon { opacity: 0; transform: translateX(-10px); }
+
+/* ==========================================================================
+   Scroll Progress Indicator
+   ========================================================================== */
+.scroll-progress-container {
+    /* Position is handled by the flexbox container */
+}
+
+.progress-ring {
+    width: 75px;
+    height: 75px;
+}
+
+.progress-ring__track,
+.progress-ring__indicator {
+    stroke-width: 3.75;
+    fill: transparent;
+}
+
+.progress-ring__track { stroke: #c7dce0; }
+
+.progress-ring__indicator {
+    stroke: #354747;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 0.1s linear, stroke 0.3s ease;
+}
+
+.progress-ring__percentage {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 19px;
+    font-weight: 200;
+    fill: #354747;
+    dominant-baseline: middle;
+    transition: fill 0.3s ease;
+}
+
+/* ==========================================================================
+   Dark Mode Styles
+   ========================================================================== */
+body.dark-mode #side-nav {
+    background-color: #354747;
+    color: white;
+}
+body.dark-mode #side-nav .logo,
+body.dark-mode #side-nav .nav-title,
+body.dark-mode #side-nav .nav-links a {
+    color: white;
+}
+body.dark-mode #side-nav .nav-links a::before {
+    background-color: white;
+}
+body.dark-mode #mode-toggle .light-mode-icon {
+    opacity: 0;
+    transform: translateX(10px);
+}
+body.dark-mode #mode-toggle .dark-mode-icon {
+
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.dark-mode-icon rect{
+    background-color: #354747;
+}
+
+body.dark-mode .progress-ring__track { stroke: #859091; }
+body.dark-mode .progress-ring__indicator { stroke: #fff; }
+body.dark-mode .progress-ring__percentage { fill: #fff; }
+
+/* ==========================================================================
+   Fixed Search Bar
+   ========================================================================== */
+@keyframes subtle-bounce-expand {
+    0% { width: 50px; }
+    60% { width: 260px; }
+    75% { width: 245px; }
+    90% { width: 252px; }
+    100% { width: 250px; }
+}
+
+.fixed-search-bar {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #354747;
+    color: #fff;
+}
+
+.fixed-search-bar.hovered {
+    animation: subtle-bounce-expand 0.5s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.search-icon svg { width: 24px; height: 24px; }
+
+.search-input-wrapper {
+    flex-grow: 1;
+    padding-right: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.1s;
+}
+
+.fixed-search-bar.hovered .search-input-wrapper { opacity: 1; }
+
+.search-input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    outline: none;
+}
+.search-input::placeholder { color: rgba(255, 255, 255, 0.7); }
+
+/* --- Social Connect Icons (Definitive Version) --- */
+
+/* 1. The container is a large, invisible "stage" for the animation.
+   Crucially, it starts with pointer-events: none so it can't be hovered. */
+.social-connect-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    width: 70px;
+    height: 280px; 
+    pointer-events: none; /* The container itself is not interactive initially */
+}
+
+/* When the JS adds .is-active, the container becomes interactive */
+.social-connect-container.is-active {
+    pointer-events: auto;
+}
+
+/* 2. The main connect icon. This is the ONLY initially interactive element. */
+.connect-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    pointer-events: auto; /* Make sure the icon itself is always interactive */
+}
+
+.connect-icon:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.connect-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* 3. Base style for ALL individual social icons */
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #354747;
+    color: white;
+    position: absolute;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s ease-out;
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Set the FINAL vertical position for EACH icon */
+.social-icon.facebook  { bottom: 195px; }
+.social-icon.instagram { bottom: 130px; }
+.social-icon.linkedin  { bottom: 65px;  }
+
+
+/* --- Keyframe Animation (Bounce in size only) --- */
+@keyframes bounce-in-place {
+    0%   { transform: translateX(-50%) scale(0.3); }
+    50%  { transform: translateX(-50%) scale(1.15); }
+    70%  { transform: translateX(-50%) scale(0.9); }
+    90%  { transform: translateX(-50%) scale(1.05); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+/* --- The Active State (Triggered by JS) --- */
+.social-connect-container.is-active .social-icon {
+    opacity: 1;
+    pointer-events: auto; /* Make them clickable ONLY when active */
+    animation: bounce-in-place 0.5s ease-out forwards;
+}
+
+/* Stagger delay when active */
+.social-connect-container.is-active .social-icon.linkedin  { animation-delay: 0s; }
+.social-connect-container.is-active .social-icon.instagram { animation-delay: 0.1s; }
+.social-connect-container.is-active .social-icon.facebook  { animation-delay: 0.2s; }
+
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media screen and (max-width: 1000px) {
+    body {
+        display: block; /* Revert to block for simpler mobile layout */
+    }
+
+    .fixed-search-bar {
+        display: none; /* Keep hidden on mobile */
+    }
+
+    .mobile-logo-hide {
+        display: block; /* Show the mobile logo */
+    }
+
+    #mobile-logo {
+        /* Ensure it's visible and clickable */
+        position: fixed; /* Keep it fixed on screen */
+        top: 1.8rem;
+        left: 1.8rem;
+        z-index: 1001; /* Above main content, below side-nav when open */
+        cursor: pointer;
+    }
+
+    #main-container {
+        order: 1; /* Not strictly needed with fixed nav overlay */
+        width: 100%; /* Full width */
+        margin-left: 0; /* No margin from side-nav */
+    }
+
+    #side-nav {
+        /* Mobile menu specific styles */
+        order: 2; /* Not strictly needed with fixed nav overlay */
+        position: fixed; /* Crucial for sliding overlay */
+        top: 0;
+        left: -75vw; /* Initially hidden off-screen to the left */
+        width: 75vw; /* Width of the sliding menu */
+        height: 100vh;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: flex-start; /* Align items to the top */
+        align-items: flex-start; /* Align items to the left */
+        padding: 40px; /* Consistent padding */
+        box-sizing: border-box;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.2); /* Shadow for visual separation */
+        transition: left 0.3s ease-out; /* Smooth slide animation */
+        z-index: 1002; /* Ensure it's on top of everything else */
+    }
+
+    /* Class to open the mobile menu */
+    #side-nav.menu-open {
+        left: 0; /* Slide into view */
+    }
+
+    /* Adjust elements inside side-nav for mobile column layout */
+    #side-nav .nav-header {
+        width: 100%; /* Take full width */
+        text-align: left; /* Align logo to left */
+        margin-bottom: 40px; /* Space below header */
+    }
+
+    #side-nav .nav-header .logo {
+        /* Adjust logo size if needed for mobile menu */
+        width: 150px; /* Smaller logo in mobile menu */
+        height: auto;
+    }
+
+    #side-nav .nav-links {
+        margin-top: 0; /* Reset margin */
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start; /* Align links to the left */
+        width: 100%; /* Take full width */
+    }
+
+    #side-nav .nav-links li {
+        margin-bottom: 25px; /* Space between links */
+        margin-left: 0; /* No left margin */
+        width: 100%; /* Take full width */
+    }
+
+    #side-nav .nav-links a {
+        font-size: 1.2rem; /* Larger font for mobile links */
+        padding-left: 0; /* No padding from before pseudo-element */
+        letter-spacing: 0; /* Reset letter spacing if needed */
+        width: 100%; /* Ensure link takes full width for click area */
+    }
+
+    #side-nav .nav-links a::before {
+        display: none; /* Hide the desktop line indicator */
+    }
+
+    #side-nav .nav-links li:not(:last-child)::after {
+        display: none; /* Hide the | separator */
+    }
+
+    .nav-footer-controls {
+        display: flex; /* Show footer controls on mobile */
+        margin-top: auto; /* Push to bottom of flex column */
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px; /* Space above controls */
+    }
+
+    /* Dark mode adjustments for mobile nav */
+    body.dark-mode #side-nav {
+        background-color: #354747;
+    }
+    body.dark-mode #side-nav .nav-header .logo img {
+        content: url("../img/logo-on-black.png"); /* Change logo in dark mode */
+    }
+}
+
+/* Further refine for very small screens if needed */
+@media screen and (max-width: 600px) {
+    #side-nav {
+        width: 85vw; /* Make it wider on very small screens */
+        left: -85vw;
+    }
+    #side-nav.menu-open {
+        left: 0;
+    }
+    #mobile-logo {
+        top: 1rem;
+        left: 1rem;
+        width: 3rem;
+        height: 3rem;
+    }
+    #side-nav .nav-header {
+        margin-bottom: 30px;
+    }
+    #side-nav .nav-links li {
+        margin-bottom: 20px;
+    }
+    #side-nav .nav-links a {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Menu Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1000; /* Below side-nav, above main content */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
