@@ -1,0 +1,90 @@
+/*
+ * Styles for Section 4 (Final Version)
+ */
+
+#section4 {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10vh 8vw;
+    position: relative;
+    overflow: hidden;
+}
+
+#section4 .video-background-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden; /* This is essential */
+    object-fit: cover; 
+}
+
+#section4 .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    
+    /* This is the key property that removes the grey bars */
+    object-fit: cover; 
+}
+
+/* Ensure the overlay and text container are layered correctly on top */
+#section4::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+#section4 .mask-container {
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+}
+
+#section4 .content-wrapper {
+    transform: translateX(-101%);
+    transition: transform 0.9s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+#section4.active .content-wrapper {
+    transform: translateX(0);
+}
+
+#section4 .section-title {
+    font-family: "Josefin Sans", sans-serif;
+    letter-spacing: -2px;
+    font-weight: 900;
+    font-size: 5vw;
+    color: #fff;
+    line-height: 1.1;
+    margin: 0;
+    overflow-wrap: break-word;
+}
+
+#section4 .section-paragraph {
+    font-family: "Josefin Slab", serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+    margin-top: 25px;
+    max-width: 45vw;
+}
+
+/* --- Responsive Styling --- */
+@media screen and (max-width: 780px) {
+    #section4 .section-title {
+        font-size: 8vw;;
+    }
+    #section4 .section-paragraph {
+        max-width: 80vw;
+        font-size: 0.9rem;
+    }
+}
