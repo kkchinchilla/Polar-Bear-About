@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
              body.classList.add('dark-mode');
              logoImage.src = 'img/logo-on-black.png'; // Apply logo change on load if dark mode is saved
              if (mobileLogo) {
-                 mobileLogo.src = 'img/logo-mark-on-black.svg'; // Apply dark mode to mobile logo on load
+                 mobileLogo.src = 'img/logo-mark.svg'; // Apply dark mode to mobile logo on load
              }
          }
      }
