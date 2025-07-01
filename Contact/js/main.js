@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
              if (body.classList.contains('dark-mode')) {
                  logoImage.src = 'img/logo-on-black.png'; // Updates desktop logo in side-nav
                  if (mobileLogo) {
-                     mobileLogo.src = 'img/logo-mark-on-black.svg'; // Updates mobile logo
+                     mobileLogo.src = 'img/logo-mark.svg'; // Updates mobile logo
                  }
              } else {
                  logoImage.src = 'img/logo.png'; // Updates desktop logo in side-nav
